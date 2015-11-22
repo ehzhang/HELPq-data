@@ -1,14 +1,50 @@
 body {
   font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-  /*background: rgb(43, 48, 59);*/
-  /*color: #F7F7F7;*/
+  padding: 80px 25%;
+  margin: 0;
+  transition-duration: .2s;
+  font-size: 1.2em;
+  color: #343434;
+}
 
-  padding: 60px 100px;
+@media only screen and (max-width: 1280px) {
+    body {
+      padding: 60px 15%;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    body {
+      padding: 60px 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      padding: 16px 16px;
+    }
 }
 
 h1, h2 {
 }
 
 section {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+}
+
+section::after {
+  content: '';
+  /*display: block;*/
+  margin: 50px auto;
+  width: 150px;
+  border-bottom: 4px solid rgba(52, 152, 219, 1);
+}
+
+.float-left {
+  margin-right: 36px;
+  float: left;
+}
+
+.clearfix {
+  clear: both;
 }

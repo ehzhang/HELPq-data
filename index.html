@@ -17,7 +17,7 @@
   </head>
   <body>
     <h1>
-      Hackathon Mentorship with HELPq
+      Mentorship Insights with HELPq
     </h1>
     <h3>
       Let's track mentor metrics!
@@ -72,15 +72,9 @@
       <h2>
         Quality over Time (Overall)
       </h2>
-      <canvas id="ratingxhour-all" width="1000" height="400"></canvas>
+      <canvas id="ratingsxhour-all" width="1000" height="400"></canvas>
       <p>
-        In minutes. <i> Lower is better! </i>
-      </p>
-      <p>
-        This excludes tickets with a response time > 1 hour
-      </p>
-      <p>
-        Response time increases dramatically between the hours of 2am-8am, while many mentors leave. A sizeable number of tickets are still submitted during this time.
+        Interestingly, mentor ratings dip from 2-3:59am, but rise again!
       </p>
     </section>
 
@@ -88,9 +82,47 @@
       <h2>
         Topics and response times
       </h2>
-      <h4>
+      <h3>
         Which topics were answered the fastest? The slowest?
-      </h4>
+      </h3>
+
+      <div class="float-left">
+        <h3> 20 Most Common Topics </h3>
+        <ol id='responsesxtopics'></ol>
+      </div>
+
+      <div class="float-left">
+        <h3> Ordered By Response Times </h3>
+        <ol id='responsesxtopics-time'></ol>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <p>
+        Interestingly, the topics people need the most help with are also the topics with the longest wait times. Android and parse help is highly demanded but also comes with some of the longest wait times!
+      </p>
+
+      <h3>
+        What about <i>sets</i> of topics?
+      </h3>
+
+      <p>
+        Taking the 100 most common topics, we can build sets of words where people need help with multiple topics in the same ticket.
+      </p>
+
+      <div class="float-left">
+        <h3> 20 Most Common Topic Sets </h3>
+        <ol id='responsetopicsets'></ol>
+      </div>
+
+      <div class="float-left">
+        <h3> Ordered By Response Times </h3>
+        <ol id='responsetopicsets-time'></ol>
+      </div>
+
+      <div class="clearfix"></div>
+
+
     </section>
 
     <section>
@@ -101,6 +133,11 @@
       </h4>
     </section>
 
+    <section>
+      <h2>
+        Abandonment :(
+      </h2>
+    </section>
 
 
   </body>
@@ -110,4 +147,6 @@
   <script src="scripts/ticketsxhour.js"></script>
   <script src="scripts/ticketsxhour-all.js"></script>
   <script src="scripts/responsexhour-all.js"></script>
+  <script src="scripts/ratingsxhour-all.js"></script>
+  <script src="scripts/responsextopics.js"></script>
 </html>

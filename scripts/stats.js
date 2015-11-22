@@ -3,7 +3,7 @@ window.stats = {};
 stats.sum = function(x){
   return x.reduce(function(prev, next){
     return prev + next;
-  },0)
+  },0);
 };
 
 stats.mean = function(x){
