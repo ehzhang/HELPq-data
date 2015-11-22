@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>
+      HELPq Data Vis
+    </title>
+
+    <script src="bower_components/Chart.js/Chart.js"></script>
+
+    <script src="scripts/stats.js"></script>
+
+    <!-- Import Data -->
+    <script src="data/js/blueprint2015.js"></script>
+    <script src="data/js/hackq2015.js"></script>
+    <script src="data/js/helpq2015.js"></script>
+    <script src="data/js/whack2015.js"></script>
+    <link rel="stylesheet" href="base.css">
+  </head>
+  <body>
+    <h1>
+      HELPq Data
+    </h1>
+
+    <hr>
+
+    <section>
+      <h2>
+        Percentage of Tickets Submitted By Hour by Hackathon
+      </h2>
+      <canvas id="ticketsxhour" width="1000" height="400"></canvas>
+      <p>
+        Blue: Blueprint, Black: Meteor Summer Hackathon, Purple: HackMIT, Teal: WHACK
+      </p>
+      <p>
+
+      </p>
+    </section>
+
+    <section>
+      <h2>
+        Percentage of Tickets Submitted By Hour (Overall)
+      </h2>
+      <canvas id="ticketsxhour-all" width="1000" height="400"></canvas>
+      <p>
+        This excludes data from Blueprint, which was not an overnight hackathon.
+      </p>
+      <p>
+        Note how the majority of tickets are submitted between the hours of 3-10pm.
+      </p>
+
+    </section>
+
+    <section>
+      <h2>
+        Mean Response Time By Hour (Overall)
+      </h2>
+      <canvas id="responsexhour-all" width="1000" height="400"></canvas>
+      <p>
+        In minutes. <i> Lower is better! </i>
+      </p>
+      <p>
+        This excludes tickets with a response time > 1 hour
+      </p>
+      <p>
+        Response time increases dramatically between the hours of 2am-8am, while many mentors leave. A sizeable number of tickets are still submitted during this time.
+      </p>
+    </section>
+
+  </body>
+  <script src="scripts/ticketsxhour.js"></script>
+  <script src="scripts/ticketsxhour-all.js"></script>
+  <script src="scripts/responsexhour-all.js"></script>
+</html>
