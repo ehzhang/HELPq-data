@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>
-      HELPq Data Vis
+      Hackathon Mentorship with HELPq
     </title>
 
     <script src="bower_components/Chart.js/Chart.js"></script>
@@ -17,8 +17,11 @@
   </head>
   <body>
     <h1>
-      HELPq Data
+      Hackathon Mentorship with HELPq
     </h1>
+    <h3>
+      Let's track mentor metrics!
+    </h3>
 
     <hr>
 
@@ -65,7 +68,45 @@
       </p>
     </section>
 
+    <section>
+      <h2>
+        Quality over Time (Overall)
+      </h2>
+      <canvas id="ratingxhour-all" width="1000" height="400"></canvas>
+      <p>
+        In minutes. <i> Lower is better! </i>
+      </p>
+      <p>
+        This excludes tickets with a response time > 1 hour
+      </p>
+      <p>
+        Response time increases dramatically between the hours of 2am-8am, while many mentors leave. A sizeable number of tickets are still submitted during this time.
+      </p>
+    </section>
+
+    <section>
+      <h2>
+        Topics and response times
+      </h2>
+      <h4>
+        Which topics were answered the fastest? The slowest?
+      </h4>
+    </section>
+
+    <section>
+      <h2>
+        Mentors vs <i> Power </i> Mentors
+      </h2>
+      <h4>
+      </h4>
+    </section>
+
+
+
   </body>
+  <script>
+    Chart.defaults.global.responsive = true;
+  </script>
   <script src="scripts/ticketsxhour.js"></script>
   <script src="scripts/ticketsxhour-all.js"></script>
   <script src="scripts/responsexhour-all.js"></script>
