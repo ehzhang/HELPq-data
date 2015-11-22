@@ -5,6 +5,7 @@
     </title>
 
     <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/Chart.Scatter.js/Chart.Scatter.min.js"></script>
 
     <script src="scripts/stats.js"></script>
 
@@ -30,8 +31,11 @@
         Percentage of Tickets Submitted By Hour by Hackathon
       </h2>
       <canvas id="ticketsxhour" width="1000" height="400"></canvas>
-      <p>
+      <p class="subtitle">
         Blue: Blueprint, Black: Meteor Summer Hackathon, Purple: HackMIT, Teal: WHACK
+      </p>
+      <p>
+      Hello World
       </p>
       <p>
 
@@ -129,16 +133,31 @@
       <h2>
         Mentors vs <i> Power </i> Mentors
       </h2>
-      <h4>
-      </h4>
+      <canvas id="powermentors" width="1000" height="400"></canvas>
     </section>
 
     <section>
       <h2>
         Abandonment :(
       </h2>
+      <p>
+        <b id="abandoned-count"></b> tickets were abandoned.
+      </p>
+      <p>
+        That is, they either expired or were never claimed.
+      </p>
+      <h3>
+        Top 10 abandoned topics
+      </h3>
+      <ol id='abandoned-topics'></ol>
     </section>
 
+
+    <section>
+      <h2>
+        So what?
+      </h2>
+    </section>
 
   </body>
   <script>
@@ -149,4 +168,6 @@
   <script src="scripts/responsexhour-all.js"></script>
   <script src="scripts/ratingsxhour-all.js"></script>
   <script src="scripts/responsextopics.js"></script>
+  <script src="scripts/powermentors.js"></script>
+  <script src="scripts/abandonment.js"></script>
 </html>

@@ -6,7 +6,7 @@
 
   var set = {
     name: 'Overall',
-    color: 'rgba(52, 152, 219,X)',
+    color: 'rgba(243, 156, 18, X)',
     data: datasets.reduce(function(prev, next){
       return prev.concat(next.data);
     },[])
