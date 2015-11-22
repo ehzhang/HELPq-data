@@ -17,148 +17,319 @@
     <link rel="stylesheet" href="base.css">
   </head>
   <body>
-    <h1>
-      Mentorship Insights with HELPq
-    </h1>
-    <h3>
-      Let's track mentor metrics!
-    </h3>
 
-    <hr>
+    <div id="header"></div>
 
-    <section>
-      <h2>
-        Percentage of Tickets Submitted By Hour by Hackathon
-      </h2>
-      <canvas id="ticketsxhour" width="1000" height="400"></canvas>
-      <p class="subtitle">
-        Blue: Blueprint, Black: Meteor Summer Hackathon, Purple: HackMIT, Teal: WHACK
-      </p>
-      <p>
-      Hello World
-      </p>
-      <p>
+    <article>
+      <h1>
+        Understanding Mentorship @ Hackathons
+      </h1>
+      <h4>
+        How HackMIT (and others) used HELPq to gain insight on mentorship
+      </h4>
+      <hr>
 
-      </p>
-    </section>
+      <section>
+        <h2>
+          What is HELPq?
+        </h2>
 
-    <section>
-      <h2>
-        Percentage of Tickets Submitted By Hour (Overall)
-      </h2>
-      <canvas id="ticketsxhour-all" width="1000" height="400"></canvas>
-      <p>
-        This excludes data from Blueprint, which was not an overnight hackathon.
-      </p>
-      <p>
-        Note how the majority of tickets are submitted between the hours of 3-10pm.
-      </p>
+        <p>
+          HELPq is real-time help queue and mentor management application, targeted at hackathons and classrooms, where there is a need for issues to be claimed and satisfied within minutes. It includes a simple interface for requesting tickets, claiming tickets, and a powerful dashboard for administrating users/mentors and examining metrics.
+        </p>
 
-    </section>
+        <p>
+          HELPq was originally built for HackMIT, but has been used at hackathons like Blueprint, Meteor Summer Hackathon 2015, WHACK, MakeMIT and WildHacks (among others!).
+        </p>
 
-    <section>
-      <h2>
-        Mean Response Time By Hour (Overall)
-      </h2>
-      <canvas id="responsexhour-all" width="1000" height="400"></canvas>
-      <p>
-        In minutes. <i> Lower is better! </i>
-      </p>
-      <p>
-        This excludes tickets with a response time > 1 hour
-      </p>
-      <p>
-        Response time increases dramatically between the hours of 2am-8am, while many mentors leave. A sizeable number of tickets are still submitted during this time.
-      </p>
-    </section>
+        <p>
+          It is open-source and super easy to extend and customize! There's plenty of documentation and more gets added all the time. You only need to edit a few config files.
+        </p>
 
-    <section>
-      <h2>
-        Quality over Time (Overall)
-      </h2>
-      <canvas id="ratingsxhour-all" width="1000" height="400"></canvas>
-      <p>
-        Interestingly, mentor ratings dip from 2-3:59am, but rise again!
-      </p>
-    </section>
+        <p>
+          This queue has been used for several hackathons now - and we've gotten some really fantastic numbers with mentor ratings and response time.
+        <p>
+          At HackMIT 2015, 425 users submitted 502 tickets through our system, with an average response time of 9:37 and a median response time of 2:48. From our data, the majority of the time, a hacker could request help and receive world-class mentorship in-person, at their table, <b>within five minutes, <i>at a 1000+ person hackathon.</i></b>
+        </p>
 
-    <section>
-      <h2>
-        Topics and response times
-      </h2>
-      <h3>
-        Which topics were answered the fastest? The slowest?
-      </h3>
+        <p>
+          You can read more about it (and set one up yourself) <a href="http://github.com/ehzhang/HELPq">on GitHub</a>! Don't forget to star ;)
+        </p>
 
-      <div class="float-left">
-        <h3> 20 Most Common Topics </h3>
-        <ol id='responsesxtopics'></ol>
-      </div>
+      </section>
 
-      <div class="float-left">
-        <h3> Ordered By Response Times </h3>
-        <ol id='responsesxtopics-time'></ol>
-      </div>
+      <section>
+        <h2>
+          Woo, Data!
+        </h2>
 
-      <div class="clearfix"></div>
+        <p>
+          While the queue has its own built in metrics panel, it's not (yet) extremely comprehensive. So, I've decided to spend my time (at a hackathon, of course!) to look back on past data, aggregated across hackathons, and see if there was anything interesting we could get out of it...
+        </p>
 
-      <p>
-        Interestingly, the topics people need the most help with are also the topics with the longest wait times. Android and parse help is highly demanded but also comes with some of the longest wait times!
-      </p>
+        <p>
+          The first thing that I wanted to check was mentorship over time. Considering hackathons tend to be overnight events, hackers will often need assistance at odd hours of the night. Whether there will be a mentor available, however, is another question.
+        </p>
 
-      <h3>
-        What about <i>sets</i> of topics?
-      </h3>
+      </section>
 
-      <p>
-        Taking the 100 most common topics, we can build sets of words where people need help with multiple topics in the same ticket.
-      </p>
+      <section>
+        <h3>
+          Percentage of Tickets Submitted By Hour by Hackathon
+        </h3>
+        <canvas id="ticketsxhour" width="1000" height="400"></canvas>
+        <p class="subtitle">
+          <span class="square blue"></span> Blueprint
+          <span class="asphalt square"></span> Meteor Summer Hackathon
+          <span class="purple square"></span> HackMIT
+          <span class="teal square"></span> WHACK
+        </p>
+        <p>
+          Above are the percentages of the total tickets submitted per hour by hackathon. Notably, Blueprint is an outlier here - it's distribution is focused in the midday because it was not an overnight hackathon.
+        </p>
+        <p>
+          From these graphs you can sort of estimate things like hackathon start time and hackathon intensity. For Blueprint, the peak time for assistance was the 12pm-1pm slot, eventually waning off as hacking ended at 5pm. The Meteor hackathon showed demonstrable peaks in the evening and (possibly) moments of panic late at night before people eventually went to sleep. HackMIT and WHACK had some otherwise 'flatter' request distribution, where help was always something someone needed.
+        </p>
+        <p>
+        </p>
+      </section>
 
-      <div class="float-left">
-        <h3> 20 Most Common Topic Sets </h3>
-        <ol id='responsetopicsets'></ol>
-      </div>
+      <section>
+        <h3>
+          Percentage of Tickets Submitted By Hour Overall
+        </h3>
+        <canvas id="ticketsxhour-all" width="1000" height="400"></canvas>
+        <p class="subtitle">
+          This excludes data from Blueprint, which was not an overnight hackathon.
+        </p>
+        <p>
+          Every hackathon except Blueprint was selected for the overall aggregate, as they all tended to start some time in the morning and end ~24-36 hours later.
+        </p>
+        <p>
+          The most notable thing here is that the majority of tickets are submitted between the hours of 3-11pm, before eventually dropping dramatically in the late hours - but never to zero.
+        </p>
 
-      <div class="float-left">
-        <h3> Ordered By Response Times </h3>
-        <ol id='responsetopicsets-time'></ol>
-      </div>
+        <p>
+          Here we can see the ramp-up of hacker's projects. We can kind of see this as hackers solidfying what they actually want to do and trying to build it out at the beginning, before eventually reaching technical difficulties later in the evening. For seasoned hackathon attendees, this insight really isn't terribly surprising. Problems always start piling up as it gets later :)
+        </p>
 
-      <div class="clearfix"></div>
+        <p>
+          Still, it's nice to see that we have data that can show this to be a typical hackathon behavior.
+        </p>
 
+      </section>
 
-    </section>
+      <section>
+        <h3>
+          Median Response Time By Hour (Overall)
+        </h3>
+        <canvas id="responsexhour-all" width="1000" height="400"></canvas>
+        <p class="subtitle">
+          Response time in minutes. <i> Lower is better! </i>
+          <br>
+        </p>
+        <p>
+          People are submitting tickets, but are there mentors there to claim them?
+        </p>
+        <p>
+          Lower median response time is better - the faster we can get people to help, the better.
+        </p>
+        <p>
+          The median stays quite low, well under 5 minutes for the majority of the afternoon, until about 7pm and onwards, at which point the response time takes a dramatic hit. We can attribute this behavior to company mentors being reasonable adults and heading home/hotel to sleep, before returning the next morning.
+        </p>
+        <p>
+          A sizeable number of tickets are still submitted during this time, and a few mentors do their best to satisfy them, while mentors begin to wake up and return to the hackathon.
+        </p>
+      </section>
 
-    <section>
-      <h2>
-        Mentors vs <i> Power </i> Mentors
-      </h2>
-      <canvas id="powermentors" width="1000" height="400"></canvas>
-    </section>
+      <section>
+        <h3>
+          Quality over Time (Overall)
+        </h3>
+        <canvas id="ratingsxhour-all" width="1000" height="400"></canvas>
+        <p class="subtitle">
+          Average mentor ticket rating out of 5, for each hour.
+        </p>
+        <p>
+          Does the quality of mentorship change over the course of the hackathon?
+        </p>
+        <p>
+          Mentor ratings as determined by the hackers receiving help seem to find that the help they receive is on average in the upper 4-5 star range - mentors do an excelent job!
+        </p>
+        <p>
+          Interestingly, mentor ratings dip from 2-3:59am, but rise again!
+        </p>
+        <p>
+          We can form a few theories about this. Perhaps it is late at night, and hackers are more frustrated? A lack of mentors with technology specific knowledge means that while they try their best, they may not necessarilly have the answers - but it's all they've got!
+        </p>
+        <p>
+          The times of 4-6am can be seen as a time of desperation, where it may be that any help is appreciated with a grin and five stars, where sleep deprived hackers begin to "just get it done enough for a demo."
+        </p>
+      </section>
 
-    <section>
-      <h2>
-        Abandonment :(
-      </h2>
-      <p>
-        <b id="abandoned-count"></b> tickets were abandoned.
-      </p>
-      <p>
-        That is, they either expired or were never claimed.
-      </p>
-      <h3>
-        Top 10 abandoned topics
-      </h3>
-      <ol id='abandoned-topics'></ol>
-    </section>
+      <section>
+        <h2>
+          Topics and response times
+        </h2>
+        <h3>
+          Which topics were answered the fastest? The slowest?
+        </h3>
+        <p>
+          Users must submit a topic for their help ticket - but how does the topic presented affect how long you'll have to wait for help?
+        </p>
 
+        <div class="float-left">
+          <h3> 20 Most Common Topics </h3>
+          <ol id='responsesxtopics'></ol>
+        </div>
 
-    <section>
-      <h2>
-        So what?
-      </h2>
-    </section>
+        <div class="float-left">
+          <h3> Ordered By Response Times </h3>
+          <ol id='responsesxtopics-time'></ol>
+        </div>
 
+        <div class="clearfix"></div>
+
+        <p class="subtitle">
+          20 of the most common words from ticket topics were selected.
+        </p>
+
+        <p>
+          Right off the bat, we see that people really need a lot of help with Android. We can also see what kinds of technology people are interested in using. General APIs are, of course, king, while specific technologies like Parse, Meteor, Swift expose some interesting trends in choosing web apps versus mobile - the people who need help the most are probably building an Android or web app.
+        </p>
+
+        <p>
+          Interestingly, the topics people need the most help with are also the topics with the longest wait times. Android and parse help is highly demanded but also comes with some of the longest wait times!
+        </p>
+
+        <p>
+          From this, it seems that while mentors are quick to accept tickets with general topics like 'api' or 'python', there are either a lack of mentors who specialize in mobile, a hesitance to debug newer technology, or a combination of the both.
+        </p>
+
+        <h3>
+          What about <i>sets</i> of topics?
+        </h3>
+
+        <p>
+          Taking the 100 most common topics, we can build sets of words where people need help with multiple topics in the same ticket.
+        </p>
+
+        <div class="float-left">
+          <h3> 20 Most Common Topic Sets </h3>
+          <ol id='responsetopicsets'></ol>
+        </div>
+
+        <div class="float-left">
+          <h3> Ordered By Response Times </h3>
+          <ol id='responsetopicsets-time'></ol>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <p class="subtitle">
+          Once again, 20 of the most common sets were selected from ticket topics.
+        </p>
+
+        <p>
+          This is super cool because now we have even more evidence as to what people are interested and what people are hesistant to answer. Once again, we see  high-demand topics and low-supply in mentors. Ruby on Rails seems to be a much less popular framework than it used to just a few years ago, as node and flask take the lead in mentor knowledge and demand.
+        </p>
+
+        <p>
+          Plenty of people are also trying to make use of push notifications, calendars, and the uber API.
+        </p>
+
+      </section>
+
+      <section>
+        <h2>
+          Abandonment :(
+        </h2>
+        <p>
+          <b id="abandoned-count"></b> tickets were abandoned.
+        </p>
+        <p>
+          That is, they either expired or were never claimed.
+        </p>
+        <h3>
+          Top 10 abandoned topics
+        </h3>
+        <ol id='abandoned-topics'></ol>
+        <p>
+          Android unfortunately seems to make it on the list of most requested and subsequently abandoned ticket topics, along with unity and azure.
+        </p>
+        <p>
+          Unity undoubtedly points to a Oculus VR hack, which is frustrating often because finding adequate help from someone knowledgable about Oculus can be very difficult.
+        </p>
+      </section>
+
+      <section>
+        <h3>
+          Mentors vs <i> Power </i> Mentors
+        </h3>
+        <canvas id="powermentors" width="1000" height="400"></canvas>
+        <p class="subtitle">
+          Mean response rate by number of tickets completed by mentor
+        </p>
+        <p>
+          A lot of mentors will answer one or two tickets, but far less go beyond, even reaching the double digits during their 24hr period.
+        </p>
+        <p>
+          In the graph above, we see only a few that answer 5-10, and far fewer who answer more than 10.
+        </p>
+        <p>
+          However, mentors who tend to answer many tickets have a particularly low response time - helping indicate that there are some mentors who effectively wait on the queue all the time and is always ready to go. That's awesome!
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          Things to Consider
+        </h2>
+
+          <p>
+            <i>Note</i> - the data aggregate used, because it included HackMIT 2015, can have a somewhat significant bias on the data due to its sheer size. However, the hackathon structure, timescale, and emphasis of queue usage was encouraged about the same in each.
+          </p>
+
+          <p>
+            Looking retrospectively at data lets us identify trends. We can always use this information to try and make mentorship better.
+          </p>
+
+          <p>
+            Incorporating more ex-hackers and students could be a great way of improving mentorship at hackathons, especially when those with hacking backgrounds have more experience with the "newest, freshest" APIs. Improvement could also come through, this could mean things like encouragement of incentives for mentors to stay longer, or encouragement of hackers to actually sleep!
+          </p>
+
+          <p>
+            There's a lot of potential to make this element of hackathons even better, and having technology to facilitate it and the data to back it up will help.
+          </p>
+
+          <p>
+            Hackathons are great for learning, and an equally great place to teach. They're not just one of the best places to build something real - they're also a place where you can help shape the minds of potential new computer scientists and watch people get excited about learning.
+          </p>
+
+          <p>
+            Hackathons helped me get started. And while I don't hack nearly as much anymore, I still love going to help mentor.
+          </p>
+
+          <p>
+            Once again, you can read more about the queue (and set one up yourself) <a href="http://github.com/ehzhang/HELPq">on GitHub</a>! Don't forget to star ;)
+          </p>
+          <p>
+            You can also contact me via email at <a href="mailto:ehzhang@mit.edu">ehzhang@mit.edu</a> or Twitter <a href="https://twitter.com/ehzhang">@ehzhang</a>!
+          </p>
+
+          <hr>
+
+          <p class="subtitle">
+            <img class="avatar" src="https://avatars1.githubusercontent.com/u/3484848?v=3&s=460">
+            <br>
+            Edwin Zhang
+            <br>
+            I do things sometimes! MIT '16
+          </p>
+
+      </section>
+
+    </article>
   </body>
   <script>
     Chart.defaults.global.responsive = true;

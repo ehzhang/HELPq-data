@@ -26,9 +26,10 @@
   var hourData = [];
   for (var i = 0; i < 24; i++){
     hourData.push(
-      stats.mean(
+      stats.median(
         hours.filter(function(hour){
-          return hour.hour == i && hour.responseTime < 3600000;
+          return hour.hour == i;
+          // return hour.hour == i && hour.responseTime < 3600000;
         })
         .map(function(hour){
           return hour.responseTime / (1000 * 60);
